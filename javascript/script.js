@@ -16,17 +16,26 @@ if(positionTop()>100){
 }else{
 
     document.getElementById("nav").style.backgroundColor='transparent'
+}
+}
 
-}
-}
+// JS related to the moving carousel
 nextBtn.addEventListener('click', ()=>{
+    clearInterval()
+
     if(counter >= cards.length - 1) return;
     projectsContainer.style.transition = "transform 0.4s ease-in-out";
     counter++;
     projectsContainer.style.transform = 'translateX(' + (-size * counter) + 'px)';
 });
+// code to change the current carousel product without the customer clicking every 3s
+setInterval(() => {
+    nextBtn.dispatchEvent(new Event('click'));
+},3000)
 
 prevBtn.addEventListener('click', ()=>{
+    clearInterval()
+
     if(counter <= 0) return;
     projectsContainer.style.transition = "transform 0.4s ease-in-out";
     counter--;
@@ -45,3 +54,4 @@ projectsContainer.addEventListener('transitionend', ()=>{
         projectsContainer.style.transform = 'translateX(' + (-size * counter) + 'px)';
     }
 });
+// END of JS related to the moving carousel
