@@ -1,0 +1,154 @@
+:root {
+    --main-color: #00ADBC;
+    --secondary-color: #303030;
+    --white: #ffff;
+    --gray: #636363;
+    --main-font-color: #303030;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: poppins;
+    scroll-behavior: smooth;
+}
+@font-face {
+    font-family: poppins;
+    src: url("../assets/fonts/Poppins/Poppins-Regular.ttf");
+}
+
+nav{
+    background-color: white;
+}
+.container{
+    width: 100%;
+    text-align: center;
+
+}
+
+.container h1{
+    position: relative;
+    top: 6rem;
+    font-weight: 400;
+    font-size: 3rem;
+    color: var(--main-font-color);
+    animation: header-in 2s  ;
+}
+@keyframes header-in {
+    from{
+        top: 0;
+        opacity: 0;
+        transform: translateY(calc(45vh));
+    }
+    50%{
+        opacity: 1;
+
+        top: 0;
+        transform: translateY(calc(45vh));
+    }
+    to{
+        transform: translateY(0px);
+    }
+    
+}
+
+.container .ellipse-left{
+    position: absolute;
+    right:0;
+    top: 10rem;
+}
+.container .ellipse-right{
+    position: absolute;
+    left:0;
+    rotate: 180deg;
+    top: 20rem;
+}
+.container .circle1{
+    position: absolute;
+    left: 15rem;
+    z-index: -1;
+
+    top: 8rem;
+}
+.container .circle2{
+    position: absolute;
+    left: 12rem;
+    top: 33rem;
+    z-index: -1;
+
+}
+.container .circle3{
+    z-index: -1;
+
+    position: absolute;
+    right: 15rem;
+    top: 32rem;
+}
+.container .circle4{
+    position: absolute;
+    right: 12rem;
+    z-index: -1;
+    top: 12rem;
+}
+
+.container-noteBooks{
+    top: 7rem;
+    position: relative;
+    margin: auto;
+    width: 70%;
+    animation: noteBooks-in 2s;
+}
+
+@keyframes noteBooks-in {
+    from{
+        top: 0;
+        transform: translateY(50rem);
+    }
+    50%{
+        top: 0;
+        transform: translateY(50rem);
+    }
+    to{
+        transform: translateY(0px);
+    }
+    
+}
+a{
+    text-decoration: none;
+}
+.noteBook{
+    margin: 1rem;
+    position: relative;
+    display: inline-block;
+    width: 13rem;
+    height: 14rem;
+    border-radius: 16px;
+    /* background-color: #f6f6f6; */
+    /* box-shadow: rgb(221, 221, 221) 0px 4px 12px; */
+    transition: 0.3s;
+}
+
+
+
+.noteBook:hover img{
+    scale: 1.2;
+}
+.noteBook img{
+    width: 10rem;
+    height: 9rem;
+    transition: 0.4s;
+}
+.noteBook .type{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #19A7CE;
+    
+
+}
+.noteBook .size{
+    margin-top: 0.5rem;
+    color: var(--gray);
+    font-size: 0.8rem;
+
+}
